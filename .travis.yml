@@ -1,5 +1,12 @@
 language: c
 
+branches:
+    only:
+        - master
+        - develop
+        - develop-clean
+        - /^release.*$/
+
 before_install:
     - sudo add-apt-repository -y ppa:terry.guo/gcc-arm-embedded
     - sudo apt-get update -qq
@@ -9,3 +16,4 @@ install:
 
 script:
   - make release
+
