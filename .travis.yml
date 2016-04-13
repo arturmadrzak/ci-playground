@@ -1,9 +1,10 @@
 sudo: false
-    
+
+language: c
+
 addons:
   apt:
     sources:
-      - terry.guo/gcc-arm-embedded
     packages:
       - gcc-arm-none-eabi
 
