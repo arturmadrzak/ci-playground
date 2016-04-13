@@ -5,6 +5,7 @@ language: c
 addons:
   apt:
     sources:
+      - ubuntu-precise
     packages:
       - gcc-arm-none-eabi
 
