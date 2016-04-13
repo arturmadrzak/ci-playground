@@ -1,11 +1,19 @@
-sudo: false
-    
-addons:
-  apt:
-    sources:
-      - terry.guo/gcc-arm-embedded
-    packages:
-      - gcc-arm-none-eabi
+language: c
+
+branches:
+    only:
+        - master
+        - develop
+        - develop-clean
+        - /^release.*$/
+
+before_install:
+    - sudo add-apt-repository -y ppa:terry.guo/gcc-arm-embedded
+    - sudo apt-get update -qq
+
+install:
+    - sudo apt-get install gcc-arm-none-eabi
 
 script:
   - make release
+
