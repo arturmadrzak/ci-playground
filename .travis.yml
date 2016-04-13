@@ -1,9 +1,4 @@
-sudo: required
-
 language: c
-
-compiler:
-    - gcc
 
 before_install:
     - sudo apt-get remove binutils-arm-none-eabi gcc-arm-none-eabi
