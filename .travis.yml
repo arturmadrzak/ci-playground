@@ -1,19 +1,19 @@
 language: c
-
 branches:
-    only:
-        - master
-        - develop
-        - develop-clean
-        - /^release.*$/
-
-before_install:
-    - sudo add-apt-repository -y ppa:terry.guo/gcc-arm-embedded
-    - sudo apt-get update -qq
-
-install:
-    - sudo apt-get install gcc-arm-none-eabi
+  only:
+  - master
+  - develop
+  - develop-clean
+  - deploy-setup
+  - "/^release.*$/"
 
 script:
   - make release
-
+deploy:
+  provider: releases
+  api_key:
+    secure: X8EauUK6Mb65AuSpOYVhqXpSXEQ3nyViTOQVnjMxEMNsxX6FI+aI5ae8QLGEsCOmaE0DXhGybyZSWy+f5/SWPqE646u9QHyjp/BJ2gfQXGK6zCkRmZ0OpdtQK2r8+gB+iYhmLdSmQSeB9zkGSuSVhShExBZ5ldG0S3ZvZnkyath2ozOKEVStc3P7ZoT5FwnK8ivx5eeHu9EisCU2dluts8uqcGOYVEoXusJpsKDXuPkV0MfnB6pGZZdGgs1dLWt+Vri7H2mHJDH4g9EQQWy1q+BOKu5XY1b5n2xn3wrAlKHXSHlUjJH/v39JyfS+ZQXk0+jKj7v5jbtg0YIT1a6SZrnSbUk8YDXBmymQXX91wCqckXEiKcFw+jlNKh9ddAQEqTHuL/90CSX9TsczS1zmg8dCFrAvRTYe9N8M6YpqBnTgpi9ko5es6ln9msJraXIaReMNSwiE8mZYa7zrdLC5rIVV+/v3fAcDv3ZnQJmb2O6lFhVHHymV9TwbZzKV8nZIe6YDVCLfaQqfGJlows8Bg/cZCnql95LZaj3w+9zhuJDM2FvpTK09TXwJUyFNkAePPcnEVGYfbTazEM3qKZtIlU7oCxB+pJNIbRFGn9mUl6oHFQ6TymiZsfNwU8lOQpYHb3DI1Q0J9jegmtLwzgITYHh1TgscT8112J4Di+InLEI=
+  file: main
+  on:
+    repo: madrypl/ci-playground
+    branch: deploy-setup
