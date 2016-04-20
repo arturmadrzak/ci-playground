@@ -1,11 +1,4 @@
 language: c
-branches:
-  only:
-  - master
-  - develop
-  - develop-clean
-  - deploy-setup
-  - "/^release.*$/"
 
 script:
   - make release
