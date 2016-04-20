@@ -7,7 +7,7 @@ branches:
   - develop-clean
   - deploy-setup
   - "/^release.*$/"
-  - "/^v[0-9.]*$"
+  - "/^v.*$/"
 
 script:
   - make release
