@@ -18,3 +18,4 @@ deploy:
   on:
     repo: madrypl/ci-playground
     branch: deploy-setup
+    tags: true
