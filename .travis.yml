@@ -1,5 +1,14 @@
 language: c
 
+branches:
+  only:
+  - master
+  - develop
+  - develop-clean
+  - deploy-setup
+  - "/^release.*$/"
+  - "/^v[0-9.]*$"
+
 script:
   - make release
 deploy:
@@ -10,5 +19,5 @@ deploy:
   skip_cleanup: true
   on:
     repo: madrypl/ci-playground
-    branch: deploy-setup
     tags: true
+    all_branches: true
